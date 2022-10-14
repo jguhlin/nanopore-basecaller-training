@@ -30,13 +30,19 @@ Change cu116 to your CUDA version (run nvidia-smi to find it, it'll be on the to
 === Download Models
 [source,shell]
 ----
-bonito download --all
+bonito download --models --show
+bonito download --models --all
+
 ----
 
-For some reason download --list was empty, but download --all worked
+=== Create a minimap2 index
+[source,shell]
+----
+minimap2 -d index.mmi assembly.fasta
+----
 
 === Basecall with --save-ctc
 [source,shell]
 ----
-bonito train...
+bonito basecaller --reference index.mmi --save-ctc --recursive --device "cuda:0" --alignment-threads 16 dna_r9.4.1_e8_sup@v3.3 ~/stonefly/all_fast5/ | samtools view -S -b - > basecalls.bam
 ----
