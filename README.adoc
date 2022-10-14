@@ -45,7 +45,9 @@ minimap2 -d index.mmi assembly.fasta
 === Basecall with --save-ctc
 [source,shell]
 ----
-bonito basecaller dna_r9.4.1_e8_sup@v3.3 ~/stonefly/all_fast5/ --reference index.mmi --save-ctc --recursive --device "cuda:0" --alignment-threads 16 | samtools view -S -b - > basecalls.bam
+bonito basecaller dna_r9.4.1_e8_sup@v3.3 ~/stonefly/all_fast5/ --batchsize 384 --reference index.mmi --save-ctc --recursive --device "cuda:0" --alignment-threads 16 | samtools view -S -b - > basecalls.bam
 ----
 
 NOTE: It has to be in the order as above, or the ctc will not save! basecaller model filepath THEN options.
+
+Default batch size is 32 (I'm 90% certain). Best to try and increase it. When it crashes from memory, best to killall bonito from another shell. I can get batchsize of 384 and it cuts a little over half an hour off on my dataset (51Gb of fast5 files). And we can work with that number on the following steps.
