@@ -2,4 +2,6 @@
 *.mmi
 *.bam
 *.sam
-
+*.tsv
+*.npy
+*.fast5
