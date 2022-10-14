@@ -32,8 +32,9 @@ Change cu116 to your CUDA version (run nvidia-smi to find it, it'll be on the to
 ----
 bonito download --models --show
 bonito download --models --all
-
 ----
+
+You can cancel it at the training data (I think?). My gpugpu machine has very little hard drive space so I did.
 
 === Create a minimap2 index
 [source,shell]
