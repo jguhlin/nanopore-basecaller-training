@@ -11,6 +11,11 @@ Several folks are interested, trying to centralize the info.
 :showtitle:
 
 // Setting up conda environment
+
+== Getting Started
+
+=== Install Bonito
+
 [source,shell]
 ----
 conda update -n base -c defaults conda
@@ -21,3 +26,17 @@ pip install -r bonito/requirements.txt
 ----
 
 Change cu116 to your CUDA version (run nvidia-smi to find it, it'll be on the top right)
+
+=== Download Models
+[source,shell]
+----
+bonito download --all
+----
+
+For some reason download --list was empty, but download --all worked
+
+=== Basecall with --save-ctc
+[source,shell]
+----
+bonito train...
+----
