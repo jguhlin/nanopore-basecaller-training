@@ -43,6 +43,14 @@ minimap2 -d index.mmi assembly.fasta
 ----
 
 === Basecall with --save-ctc
+==== Trying this now
+[source,shell]
+----
+bonito basecaller dna_r9.4.1_e8_sup@v3.3 ~/stonefly/all_fast5/ --batchsize 384 --reference index.mmi --save-ctc --recursive --device "cuda:0" --alignment-threads 16 > basecalled-default-model/basecalls.bam
+----
+
+
+==== Did not work.
 [source,shell]
 ----
 bonito basecaller dna_r9.4.1_e8_sup@v3.3 ~/stonefly/all_fast5/ --batchsize 384 --reference index.mmi --save-ctc --recursive --device "cuda:0" --alignment-threads 16 | samtools view -S -b - > basecalls.bam
@@ -68,3 +76,5 @@ line 563, in run np.save(os.path.join(output_directory, "chunks.npy"), chunks) F
 > completed reads: 2393454 duration: 1:59:37 samples per second 3.3E+06
 > done
 ----
+
+The problem was samtools. Bonito tries to be smart about the output directory while using pipes, but this breaks using pipes for anything other than file output.
