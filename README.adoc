@@ -51,3 +51,20 @@ bonito basecaller dna_r9.4.1_e8_sup@v3.3 ~/stonefly/all_fast5/ --batchsize 384 -
 NOTE: It has to be in the order as above, or the ctc will not save! basecaller model filepath THEN options.
 
 Default batch size is 32 (I'm 90% certain). Best to try and increase it. When it crashes from memory, best to killall bonito from another shell. I can get batchsize of 384 and it cuts a little over half an hour off on my dataset (51Gb of fast5 files). And we can work with that number on the following steps.
+
+This led to this error:
+----
+> reading fast5 outputting aligned sam loading model dna_r9.4.1_e8_sup@v3.3 loading reference
+Exception in thread Thread-27: Traceback (most recent call last): File 
+  "/home/josephguhlin/.asdf/installs/python/anaconda3-2021.05/envs/bonito/lib/python3.8/threading.py", line 932, 
+  in _
+bootstrap_inner self.run() File 
+  "/home/josephguhlin/.asdf/installs/python/anaconda3-2021.05/envs/bonito/lib/python3.8/site-packages/bonito/io.py",
+line 563, in run np.save(os.path.join(output_directory, "chunks.npy"), chunks) File "<__array_function__ 
+  internals>", line 5, in save File 
+  "/home/josephguhlin/.asdf/installs/python/anaconda3-2021.05/envs/bonito/lib/python3.8/site-packages/numpy/lib/npyio
+.py", line 525, in save file_ctx = open(file, "wb") FileNotFoundError: [Errno 2] No such file or directory: 
+'/proc/2487219/fd/chunks.npy'
+> completed reads: 2393454 duration: 1:59:37 samples per second 3.3E+06
+> done
+----
