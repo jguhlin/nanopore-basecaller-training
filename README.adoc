@@ -78,3 +78,9 @@ line 563, in run np.save(os.path.join(output_directory, "chunks.npy"), chunks) F
 ----
 
 The problem was samtools. Bonito tries to be smart about the output directory while using pipes, but this breaks using pipes for anything other than file output.
+
+====
+Update
+====
+Crashing from memory or shoddy connection to the server. Copying a subset over and trying again.
+
