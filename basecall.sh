@@ -5,4 +5,4 @@ bonito basecaller dna_r9.4.1_e8_sup@v3.3 \
 	--save-ctc \
 	--recursive \
 	--device "cuda:0" \
-	--alignment-threads 16 > ~/bcc-archive/guhlin/Aptera_basecalls/basecalls.sam
+	--alignment-threads 16 > ./basecalled-default-model/basecalls.sam

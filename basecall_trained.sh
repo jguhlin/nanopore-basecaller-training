@@ -1,0 +1,1 @@
+bonito basecaller stonefly_tuned ~/stonefly/all_fast5/ --batchsize 384 --reference assembly.fasta --save-ctc --recursive --device "cuda:0" --alignment-threads 16 > basecalled-trained-model/basecalls.sam
