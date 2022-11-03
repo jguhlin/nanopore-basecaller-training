@@ -110,3 +110,32 @@ This is the type of log I'm getting for training, so a very slight improvement. 
 [epoch 11] directory=./aptera_tuned loss=0.0210 mean_acc=99.371% median_acc=99.378%
 [63540/366841]:  17%|#########8                                               | [17:20, loss=0.0179]
 ```
+
+==== Added evaluate script
+```
+josephguhlin in joseph-gpugpu in nanopore-basecaller-training on  main [?] via 🅒 bonito  took 3s
+❯ bash evaluate_trained.bash                                                                                                                                                                                                                (bonito)
+* loading data
+[validation set not found: splitting training set]
+* loading model 11
+* calling
+* mean      99.41%
+* median    99.42%
+* time      1.02
+* samples/s 9.78E+06
+
+josephguhlin in joseph-gpugpu in nanopore-basecaller-training on  main [?] via 🅒 bonito  took 4s
+❯ bash evaluate_default.bash                                                                                                                                                                                                                (bonito)
+* loading data
+[validation set not found: splitting training set]
+* loading model 1
+* calling
+* mean      99.19%
+* median    99.18%
+* time      1.03
+* samples/s 9.72E+06
+
+josephguhlin in joseph-gpugpu in nanopore-basecaller-training on  main [?] via 🅒 bonito  took 4s
+```
+
+So some small improvement
