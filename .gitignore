@@ -5,3 +5,7 @@
 *.tsv
 *.npy
 *.fast5
+*.csv
+*.toml
+*.tar
+*.log
