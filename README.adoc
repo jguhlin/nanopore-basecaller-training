@@ -84,3 +84,29 @@ Update
 ====
 Crashing from memory or shoddy connection to the server. Copying a subset over and trying again.
 
+This is the type of log I'm getting for training, so a very slight improvement. Now trying without using a pretrained model.
+```
+[366841/366841]: 100%|######################################################| [1:40:59, loss=0.0226]
+[epoch 1] directory=./aptera_tuned loss=0.0231 mean_acc=99.336% median_acc=99.344%
+[366841/366841]: 100%|######################################################| [1:40:46, loss=0.0213]
+[epoch 2] directory=./aptera_tuned loss=0.0224 mean_acc=99.349% median_acc=99.358%
+[366841/366841]: 100%|######################################################| [1:40:53, loss=0.0211]
+[epoch 3] directory=./aptera_tuned loss=0.0220 mean_acc=99.355% median_acc=99.364%
+[366841/366841]: 100%|######################################################| [1:40:50, loss=0.0209]
+[epoch 4] directory=./aptera_tuned loss=0.0217 mean_acc=99.359% median_acc=99.369%
+[366841/366841]: 100%|######################################################| [1:40:38, loss=0.0207]
+[epoch 5] directory=./aptera_tuned loss=0.0215 mean_acc=99.362% median_acc=99.371%
+[366841/366841]: 100%|######################################################| [1:40:26, loss=0.0196]
+[epoch 6] directory=./aptera_tuned loss=0.0213 mean_acc=99.366% median_acc=99.372%
+[366841/366841]: 100%|######################################################| [1:40:39, loss=0.0195]
+[epoch 7] directory=./aptera_tuned loss=0.0212 mean_acc=99.368% median_acc=99.376%
+[366841/366841]: 100%|######################################################| [1:40:55, loss=0.0186]
+[epoch 8] directory=./aptera_tuned loss=0.0211 mean_acc=99.369% median_acc=99.374%
+[366841/366841]: 100%|######################################################| [1:40:20, loss=0.0189]
+[epoch 9] directory=./aptera_tuned loss=0.0211 mean_acc=99.371% median_acc=99.375%
+[366841/366841]: 100%|######################################################| [1:40:05, loss=0.0182]
+[epoch 10] directory=./aptera_tuned loss=0.0210 mean_acc=99.373% median_acc=99.379%
+[366841/366841]: 100%|######################################################| [1:39:59, loss=0.0182]
+[epoch 11] directory=./aptera_tuned loss=0.0210 mean_acc=99.371% median_acc=99.378%
+[63540/366841]:  17%|#########8                                               | [17:20, loss=0.0179]
+```
